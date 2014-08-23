@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <div class="col-md-7">
+        <div class="row">
+            <h3>include.html</h3>
+            <div class="code" data-language="xml">
+&lt;div class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;
+        templates:include
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;div data-template="templates:include" 
+             data-template-path="included.html"/&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+        </div>
+        <div class="row">
+            <h3>included.html</h3>
+            <div class="code" data-language="xml">
+&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;h1&gt;Included&lt;/h1&gt;
+&lt;/div&gt;
+</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                templates:include
+            </div>
+            <div class="panel-body">
+                <div data-template="templates:include" data-template-path="included.html"/>
+            </div>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>templates:include</strong> replaces the current node with the contents 
+               of the XML referred to by the attribute <strong>data-template-path</strong>. </p>
+        </div>
+    </div>
+</div>

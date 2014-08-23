@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <div class="col-md-7">
+        <div class="row">
+            <h3>surround.html</h3>
+            <div class="code" data-language="xml">
+&lt;div class="col-md-5"&gt;
+    &lt;div data-template="templates:surround" 
+         data-template-with="surrounding.html" 
+         data-template-at="panel-content"&gt;
+        &lt;h3&gt;Surrounded&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+        </div>
+        <div class="row">
+            <h3>surrounding.html</h3>
+            <div class="code" data-language="xml">
+&lt;div class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;
+        templates:surround
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;h3&gt;Surrounding&lt;/h3&gt;
+        &lt;div class="well"&gt;
+            &lt;div id="panel-content"/&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div data-template="templates:surround" data-template-with="surrounding.html" data-template-at="panel-content">
+            <h3>Surrounded</h3>
+        </div>
+        <div class="alert alert-warning">
+            <p>Surrounds its content with the contents of the XML resource specified in 
+                <strong>data-template-with</strong>. The <strong>data-template-at</strong> atribute determines where 
+                the content is inserted into the surrounding XML. It should match an 
+                existing HTML id in the template.</p>
+            <p>The <strong>data-template-using</strong> attribute is optional and specifies the id of an 
+                element in the <strong>data-template-with</strong> resource. The current content will be 
+                surrounded by this element. If the parameter is missing, the entire document given in 
+                <strong>data-template-with</strong> will be used.</p>
+        </div>
+    </div>
+</div>

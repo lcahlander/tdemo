@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <div class="col-md-7">
+        <div class="row">
+            <div class="code" data-language="xml">
+&lt;div class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;
+        templates:if-model-key-equals
+    &lt;/div&gt;
+    &lt;div class="panel-body" data-template="app:set-model"&gt;
+        &lt;div data-template="templates:if-model-key-equals" 
+             data-template-key="foo" 
+             data-template-value="bar"&gt;
+            &lt;h3&gt;Foo is set to bar.&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div data-template="templates:unless-model-key-equals" 
+             data-template-key="foo" 
+             data-template-value="bar"&gt;
+            &lt;h3&gt;Foo is not set to bar.&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+            <div class="row">
+                <div class="code" data-language="xquery">
+declare
+ %templates:wrap 
+function app:set-model($node as node(), $model as map(*)) as map(*) {
+    map { 'foo' :=  'bar' }
+};
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                templates:if-model-key-equals
+            </div>
+            <div class="panel-body" data-template="app:set-model">
+                <div data-template="templates:if-model-key-equals" data-template-key="foo" data-template-value="bar">
+                    <h3>Foo is set to bar.</h3>
+                </div>
+                <div data-template="templates:unless-model-key-equals" data-template-key="foo" data-template-value="bar">
+                    <h3>Foo is not set to bar.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>templates:if-model-key-equals</strong> conditionally includes its 
+                content only if the given map entry (whose key is identified by the attribute 
+                <strong>data-template-key</strong>) is set and its value does equal the 
+                value (identified by the attribute <strong>data-template-value</strong>).</p>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>templates:unless-model-key-equals</strong> conditionally includes its 
+                content only if the given map entry (whose key is identified by the attribute 
+                <strong>data-template-key</strong>) is not set or its value does not equal the 
+                value (identified by the attribute <strong>data-template-value</strong>).</p>
+        </div>
+    </div>
+</div>

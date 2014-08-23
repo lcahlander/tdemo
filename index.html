@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    <h1 data-template="config:app-title">Generated page</h1>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#each-table" role="tab" data-toggle="tab">each - table</a>
+        </li>
+        <li>
+            <a href="#each-list" role="tab" data-toggle="tab">each - list</a>
+        </li>
+        <li>
+            <a href="#include" role="tab" data-toggle="tab">include</a>
+        </li>
+        <li>
+            <a href="#if-parameter" role="tab" data-toggle="tab">if parameter</a>
+        </li>
+        <li>
+            <a href="#if-model" role="tab" data-toggle="tab">if model</a>
+        </li>
+        <li>
+            <a href="#surround" role="tab" data-toggle="tab">surround</a>
+        </li>
+        <li>
+            <a href="#show-form" role="tab" data-toggle="tab">form</a>
+        </li>
+    </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="each-table">
+            <div data-template="templates:include" data-template-path="each-table.html"/>
+        </div>
+        <div class="tab-pane fade" id="each-list">
+            <div data-template="templates:include" data-template-path="each-list.html"/>
+        </div>
+        <div class="tab-pane fade" id="include">
+            <div data-template="templates:include" data-template-path="include.html"/>
+        </div>
+        <div class="tab-pane fade" id="if-parameter">
+            <div data-template="templates:include" data-template-path="if-parameter.html"/>
+        </div>
+        <div class="tab-pane fade" id="if-model">
+            <div data-template="templates:include" data-template-path="if-model.html"/>
+        </div>
+        <div class="tab-pane fade" id="surround">
+            <div data-template="templates:include" data-template-path="surround.html"/>
+        </div>
+        <div class="tab-pane fade" id="show-form">
+            <div data-template="templates:include" data-template-path="show-form.html"/>
+        </div>
+    </div>
+</div>

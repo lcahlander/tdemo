@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <div class="col-md-7">
+        <div class="row">
+            <div class="code" data-language="xml">
+&lt;div class="panel panel-default"&gt;
+    &lt;div class="panel-heading"&gt;
+        templates:if-parameter
+    &lt;/div&gt;
+    &lt;div class="panel-body"&gt;
+        &lt;div data-template="templates:if-parameter-set" 
+             data-template-param="myparam"&gt;
+            &lt;h3&gt;Parameter myparam is set&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div data-template="templates:if-parameter-unset" 
+             data-template-param="myparam"&gt;
+            &lt;h3&gt;Parameter myparam is not set&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                templates:if-parameter
+            </div>
+            <div class="panel-body" data-template="app:set-model">
+                <div data-template="templates:if-parameter-set" data-template-param="myparam">
+                    <h3>Parameter myparam is set</h3>
+                </div>
+                <div data-template="templates:if-parameter-unset" data-template-param="myparam">
+                    <h3>Parameter myparam is not set</h3>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>templates:if-parameter-set</strong> conditionally includes its 
+                content only if the given request parameter is set and is not empty. The
+                parameter is referred to by the attribute <strong>data-template-param</strong>. </p>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>templates:if-parameter-unset</strong> conditionally includes its 
+                content only if the given request parameter is not set or is empty. The
+                parameter is referred to by the attribute <strong>data-template-param</strong>. </p>
+        </div>
+    </div>
+</div>

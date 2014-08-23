@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+    <div class="col-md-7">
+        <div class="row">
+            <div class="code" data-language="xml">
+&lt;table data-template="app:list" class="table table-striped"&gt;
+    &lt;tbody&gt;
+        &lt;tr data-template="templates:each" 
+            data-template-from="results" 
+            data-template-to="entry"&gt;
+            &lt;td data-template="app:list-entry"/&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</div>
+        </div>
+        <div class="row">
+            <div class="code" data-language="xquery">
+declare 
+ %templates:wrap 
+function app:list($node as node(), $model as map(*)) as map(*) {
+    map:entry('results', ('a', 'b', 'c'))
+};
+
+declare 
+ %templates:wrap 
+function app:list-entry($node as node(), $model as map(*)) {
+    $model('entry')
+};
+</div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                templates:each within table
+            </div>
+            <table data-template="app:list" class="table table-striped">
+                <tbody>
+                    <tr data-template="templates:each" data-template-from="results" data-template-to="entry">
+                        <td data-template="app:list-entry"/>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="alert alert-warning">
+            <p>The <strong>app:list</strong> sets a map entry for 'results' to a sequence.</p>
+            <p>The <strong>templates:each</strong> iterates over the sequence identitified by 
+                <strong>data-template-from</strong> and places the value into the map entry 
+                'entry' from the <strong>data-template-to</strong>.  The HTML element containing
+                the <strong>templates:each</strong> is repeated for each entry in the sequence.</p>
+            <p>The HTML elements within the HTML element containing the <strong>templates:each</strong>
+                will use the map entry 'entry' from the <strong>data-template-to</strong> as one can see
+                in the <strong>&lt;td data-template="app:list-entry"/&gt;</strong>. </p>
+        </div>
+    </div>
+</div>
